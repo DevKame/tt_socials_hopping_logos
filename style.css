@@ -1,0 +1,89 @@
+
+:root {
+    --fb: #1877F2;
+    --tg: #24A1DE;
+    --insta:  #e1306c;
+    --x: #08a0e9;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.social {
+    width: 150px;
+    aspect-ratio: 1;
+    border: 5px solid #111;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px #111;
+}
+.social .bg {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: inherit;
+    transition: transform .5s ease;
+}
+i {
+    font-size: 70px;
+    transition: color .5s linear;
+    position: relative;
+}
+.fb i {
+    color: var(--fb);
+}
+.telegram i {
+    color: var(--tg);
+}
+.x i {
+    color: var(--x);
+}
+.instagram i {
+    color: var(--insta);
+}
+.social:hover i {
+    color: #c7c7c7;
+    animation: logojump .5s linear 1 forwards;
+}
+.fb .bg {
+    background-image:
+    radial-gradient(circle, #111, var(--fb));
+}
+.telegram .bg {
+    background-image:
+    radial-gradient(circle, #111, var(--tg));
+}
+.x .bg {
+    background-image:
+    radial-gradient(circle, #111, var(--x));
+}
+.instagram .bg {
+    background-image:
+    radial-gradient(circle, #111, var(--insta));
+}
+@keyframes logojump {
+    0% {
+        transform:
+        translate(0,0) rotateY(0);
+    }
+    50% {
+        transform:
+        translate(0,-20%) rotateY(180deg);
+    }
+    100% {
+        transform:
+        translate(0,0) rotateY(360deg);
+    }
+}
